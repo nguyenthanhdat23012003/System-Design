@@ -64,7 +64,6 @@ Trong thiết kế này:
 
 ---
 
-### Static Web Tier
 
 When designing a system that supports horizontal scaling for the web tier, it is necessary to move **state** (e.g., session data) out of the web tier. A good practice is to store session data in a **persistent data store** such as a relational database or NoSQL. This enables web servers in the cluster to access state data from the shared storage, known as the **stateless web tier**.
 
