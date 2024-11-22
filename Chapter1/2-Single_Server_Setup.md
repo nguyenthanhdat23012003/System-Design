@@ -1,6 +1,6 @@
-**[English Below]**
-
 ### Single Server Setup
+
+**[English Below]**
 
 Hành trình ngàn dặm bắt đầu từ một bước chân (Lão Tử), và việc xây dựng một hệ thống phức tạp cũng không ngoại lệ. Để bắt đầu một cách đơn giản, mọi thành phần (ứng dụng web, cơ sở dữ liệu, bộ nhớ đệm, v.v) sẽ chạy trên **một máy chủ duy nhất**: 
 
@@ -29,8 +29,6 @@ Tiếp theo, hãy phân tích traffic source. Traffic source đến web server �
 </p>
 
 ----------------
-
-### Single Server Setup
 
 A journey of a thousand miles begins with a single step (Lao Tzu), and building a complex system is no different. To start simple, all components (web app, database, cache, etc.) are running on **a single server**:
 
