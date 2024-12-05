@@ -1,10 +1,72 @@
-### Database Replication
+**[Vietnamese Below]**
 
-**[English Below]**
+## Database Replication
+
+Quoted from Wikipedia: *“Database replication can be used in many database management systems, usually with a master/slave relationship between the original (master) and the copies (slaves)”* [3].
+
+### What is Database Replication?
+
+Database replication is a technique that creates a **master/slave** relationship between the original database (**master**) and its replicas (**slaves**). Simply put, it copies the master database into multiple replicas stored on other servers.
+
+- **Master Database**: Supports only **write** operations like `insert`, `delete`, and `modify`.
+- **Slave Database**: Supports only **read** operations for retrieving data.
+
+Most systems have a higher ratio of read operations compared to write operations. Therefore, the number of slave databases is usually larger than the number of master databases. The below figure illustrates a master database with multiple slave databases.
+
+<p align="center" style="width: 50%; margin-left: 25%">
+  <img src="../images/Chapter1/Database_Replication_1.png" alt="Database_Replication">
+</p>
+
+### Benefits of Database Replication
+
+Like **horizontal scaling**, database replication provides the following benefits:
+
+1. **Better Performance**:
+   - Write operations are handled by the master.
+   - Read operations are distributed across slaves, enabling the system to handle more queries in parallel.
+
+2. **Improved Reliability**:
+   - Data is replicated across multiple servers. If one server fails (due to hardware failure or disasters), data remains intact.
+
+3. **High Availability**:
+   - If one database server goes offline, other servers can continue operating, ensuring system uptime.
+
+### Handling Failures in Database Replication
+
+1. **When a Slave Database Fails**:
+   - If there is only one slave, read operations temporarily fall back to the master.
+   - Once the issue is resolved, a new slave replaces the failed one.
+   - If multiple slaves are available, read operations are redirected to healthy slaves.
+
+2. **When the Master Database Fails**:
+   - A slave is **promoted to master** to continue handling write operations.
+   - A new slave is added to replace the failed one.
+   - In production systems, promoting a new master is complex due to potential data inconsistencies. Methods like **multi-master replication** or **circular replication** can help but require more complex setups.
+
+### Overview of System Design
+
+The below figure shows the system design after adding load balancer and database replication:
+
+<p align="center" style="width: 50%; margin-left: 25%">
+  <img src="../images/Chapter1/Database_Replication_2.png" alt="Database_Replication">
+</p>
+
+1. A user retrieves the load balancer's IP via DNS.
+2. Requests are sent to the load balancer.
+3. The load balancer distributes requests to web servers.
+4. Read requests are sent to slave databases.
+5. Write requests (insert, update, delete) are sent to the master database.
+
+With this design, the **data tier** achieves high stability. Next, we will explore improving response times with a **cache layer** and **Content Delivery Network (CDN)**.
+
+-------------
+
+## Database Replication
+
 
 Trong thiết kế trước đây với server riêng cho database, một vấn đề lớn có thể xảy ra là: **nếu server chứa database bị down thì sao?** Để giải quyết vấn đề này, **Database Replication** được ra đời.
 
-#### Database Replication là gì?
+### Database Replication là gì?
 
 Database replication là kỹ thuật tạo ra mối quan hệ **master/slave** giữa cơ sở dữ liệu chính (**master**) và các bản sao (**slave**). Nói một cách đơn giản, đây là việc sao chép cơ sở dữ liệu chính thành nhiều bản sao trên các server khác. 
 
@@ -17,7 +79,7 @@ Vì hầu hết các hệ thống có số lượng thao tác **đọc** nhiều
   <img src="../images/Chapter1/Database_Replication_1.png" alt="Database_Replication">
 </p>
 
-#### Lợi ích của Database Replication
+### Lợi ích của Database Replication
 
 Tương tự như **horizontal scaling**, database replication mang lại những lợi ích quan trọng sau:
 
@@ -31,7 +93,7 @@ Tương tự như **horizontal scaling**, database replication mang lại nhữn
 3. **Tính khả dụng cao (High Availability)**:
    - Nếu một database server bị offline, các server khác vẫn tiếp tục hoạt động. Điều này đảm bảo hệ thống không bị gián đoạn.
 
-#### Cách Database Replication Hoạt Động Khi Có Sự Cố
+### Cách Database Replication Hoạt Động Khi Có Sự Cố
 
 1. **Khi Slave Database bị Down**:
    - Nếu chỉ có một slave, các quyền đọc sẽ tạm thời chuyển sang master database.
@@ -43,7 +105,7 @@ Tương tự như **horizontal scaling**, database replication mang lại nhữn
    - Một slave mới sẽ được thêm vào để đảm bảo quá trình sao chép dữ liệu.
    - Trong thực tế, việc chuyển đổi này phức tạp hơn do dữ liệu của slave có thể chưa được cập nhật đầy đủ. Một số phương pháp như **multi-master replication** hoặc **circular replication** có thể được áp dụng nhưng yêu cầu cấu hình phức tạp.
 
-#### Tổng Quan Hoạt Động
+### Tổng Quan Hoạt Động
 
 Minh họa thiết kế hệ thống sau khi thêm load balancer và database replication:
 
@@ -59,63 +121,5 @@ Minh họa thiết kế hệ thống sau khi thêm load balancer và database re
 
 Với thiết kế này, **data tier** đã đạt mức ổn định cao. Tiếp theo, chúng ta sẽ tìm hiểu cách cải thiện thời gian phản hồi thông qua **cache layer** và **Content Delivery Network (CDN)**.
 
----
 
-### Database Replication
 
-Quoted from Wikipedia: *“Database replication can be used in many database management systems, usually with a master/slave relationship between the original (master) and the copies (slaves)”* [3].
-
-#### What is Database Replication?
-
-Database replication is a technique that creates a **master/slave** relationship between the original database (**master**) and its replicas (**slaves**). Simply put, it copies the master database into multiple replicas stored on other servers.
-
-- **Master Database**: Supports only **write** operations like `insert`, `delete`, and `modify`.
-- **Slave Database**: Supports only **read** operations for retrieving data.
-
-Most systems have a higher ratio of read operations compared to write operations. Therefore, the number of slave databases is usually larger than the number of master databases. The below figure illustrates a master database with multiple slave databases.
-
-<p align="center" style="width: 50%; margin-left: 25%">
-  <img src="../images/Chapter1/Database_Replication_1.png" alt="Database_Replication">
-</p>
-
-#### Benefits of Database Replication
-
-Like **horizontal scaling**, database replication provides the following benefits:
-
-1. **Better Performance**:
-   - Write operations are handled by the master.
-   - Read operations are distributed across slaves, enabling the system to handle more queries in parallel.
-
-2. **Improved Reliability**:
-   - Data is replicated across multiple servers. If one server fails (due to hardware failure or disasters), data remains intact.
-
-3. **High Availability**:
-   - If one database server goes offline, other servers can continue operating, ensuring system uptime.
-
-#### Handling Failures in Database Replication
-
-1. **When a Slave Database Fails**:
-   - If there is only one slave, read operations temporarily fall back to the master.
-   - Once the issue is resolved, a new slave replaces the failed one.
-   - If multiple slaves are available, read operations are redirected to healthy slaves.
-
-2. **When the Master Database Fails**:
-   - A slave is **promoted to master** to continue handling write operations.
-   - A new slave is added to replace the failed one.
-   - In production systems, promoting a new master is complex due to potential data inconsistencies. Methods like **multi-master replication** or **circular replication** can help but require more complex setups.
-
-#### Overview of System Design
-
-The below figure shows the system design after adding load balancer and database replication:
-
-<p align="center" style="width: 50%; margin-left: 25%">
-  <img src="../images/Chapter1/Database_Replication_2.png" alt="Database_Replication">
-</p>
-
-1. A user retrieves the load balancer's IP via DNS.
-2. Requests are sent to the load balancer.
-3. The load balancer distributes requests to web servers.
-4. Read requests are sent to slave databases.
-5. Write requests (insert, update, delete) are sent to the master database.
-
-With this design, the **data tier** achieves high stability. Next, we will explore improving response times with a **cache layer** and **Content Delivery Network (CDN)**.

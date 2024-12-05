@@ -1,4 +1,4 @@
-### Reference Materials
+## Reference Materials
 
 Below is a list of reference materials cited throughout the chapter. These resources provide additional information and deeper insights into the topics discussed:
 
