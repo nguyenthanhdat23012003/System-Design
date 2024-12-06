@@ -25,28 +25,28 @@ This section demonstrates how to estimate the **Query Per Second (QPS)** and sto
 
 1. **Daily Active Users (DAU):**
 
-   $$
-   DAU = 300 \, \text{million} \times 50\% = 150 \, \text{million users/day}.
-   $$
+$$
+DAU = 300 \, \text{million} \times 50\% = 150 \, \text{million users/day}.
+$$
 
 2. **Total Tweets per Day:**
 
-   $$
-   \text{Total Tweets per Day} = 150 \, \text{million} \times 2 = 300 \, \text{million tweets/day}.
-   $$
+$$
+\text{Total Tweets per Day} = 150 \, \text{million} \times 2 = 300 \, \text{million tweets/day}.
+$$
 
 3. **Average QPS:**
 
-   $$
-   QPS = \frac{300 \, \text{million tweets}}{24 \, \text{hours} \times 3600 \, \text{seconds}} \approx 3500 \, \text{QPS}.
-   $$
+$$
+QPS = \frac{300 \, \text{million tweets}}{24 \, \text{hours} \times 3600 \, \text{seconds}} \approx 3500 \, \text{QPS}.
+$$
 
 4. **Peak QPS:**
 
    - Assuming peak QPS is **2 times** the average QPS:
-   $$
-   \text{Peak QPS} = 2 \times 3500 = 7000 \, \text{QPS}.
-   $$
+$$
+\text{Peak QPS} = 2 \times 3500 = 7000 \, \text{QPS}.
+$$
 
 ### **Storage Requirements**
 
@@ -59,15 +59,15 @@ This section demonstrates how to estimate the **Query Per Second (QPS)** and sto
 
 2. **Daily Media Storage:**
 
-   $$
-   \text{Daily Storage} = 300 \, \text{million tweets/day} \times 10\% \times 1 \, \text{MB} = 30 \, \text{TB/day}.
-   $$
+$$
+\text{Daily Storage} = 300 \, \text{million tweets/day} \times 10\% \times 1 \, \text{MB} = 30 \, \text{TB/day}.
+$$
 
 3. **5-Year Storage:**
 
-   $$
-   \text{5-Year Storage} = 30 \, \text{TB/day} \times 365 \, \text{days/year} \times 5 \, \text{years} \approx 55 \, \text{PB}.
-   $$
+$$
+\text{5-Year Storage} = 30 \, \text{TB/day} \times 365 \, \text{days/year} \times 5 \, \text{years} \approx 55 \, \text{PB}.
+$$
 
 ### **Conclusion**
 
@@ -105,28 +105,28 @@ Phần này minh họa cách ước tính **số lượng truy vấn mỗi giây
 
 1. **Người dùng hoạt động hàng ngày (DAU):**
 
-   $$
-   DAU = 300 \, \text{triệu} \times 50\% = 150 \, \text{triệu người dùng/ngày}.
-   $$
+$$
+DAU = 300 \, \text{triệu} \times 50\% = 150 \, \text{triệu người dùng/ngày}.
+$$
 
 2. **Tổng số tweet mỗi ngày:**
 
-   $$
-   \text{Tổng số tweet/ngày} = 150 \, \text{triệu} \times 2 = 300 \, \text{triệu tweet/ngày}.
-   $$
+$$
+\text{Tổng số tweet/ngày} = 150 \, \text{triệu} \times 2 = 300 \, \text{triệu tweet/ngày}.
+$$
 
 3. **QPS trung bình:**
 
-   $$
-   QPS = \frac{300 \, \text{triệu tweet}}{24 \, \text{giờ} \times 3600 \, \text{giây}} \approx 3500 \, \text{QPS}.
-   $$
+$$
+QPS = \frac{300 \, \text{triệu tweet}}{24 \, \text{giờ} \times 3600 \, \text{giây}} \approx 3500 \, \text{QPS}.
+$$
 
 4. **QPS cao điểm:**
    - Giả định QPS cao điểm gấp **2 lần QPS trung bình**:
 
-   $$
-   \text{QPS cao điểm} = 2 \times 3500 = 7000 \, \text{QPS}.
-   $$
+$$
+\text{QPS cao điểm} = 2 \times 3500 = 7000 \, \text{QPS}.
+$$
 
 ### **Yêu cầu lưu trữ**
 
@@ -139,15 +139,15 @@ Phần này minh họa cách ước tính **số lượng truy vấn mỗi giây
 
 2. **Dung lượng lưu trữ mỗi ngày:**
 
-   $$
-   \text{Dung lượng lưu trữ hàng ngày} = 300 \, \text{triệu tweet/ngày} \times 10\% \times 1 \, \text{MB} = 30 \, \text{TB/ngày}.
-   $$
+$$
+\text{Dung lượng lưu trữ hàng ngày} = 300 \, \text{triệu tweet/ngày} \times 10\% \times 1 \, \text{MB} = 30 \, \text{TB/ngày}.
+$$
 
 3. **Dung lượng lưu trữ trong 5 năm:**
 
-   $$
-   \text{Dung lượng 5 năm} = 30 \, \text{TB/ngày} \times 365 \, \text{ngày/năm} \times 5 \, \text{năm} \approx 55 \, \text{PB}.
-   $$
+$$
+\text{Dung lượng 5 năm} = 30 \, \text{TB/ngày} \times 365 \, \text{ngày/năm} \times 5 \, \text{năm} \approx 55 \, \text{PB}.
+$$
 
 ### **Kết luận**
 

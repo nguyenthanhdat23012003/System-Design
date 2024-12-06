@@ -38,17 +38,11 @@ This approach is not about achieving exact results but rather about developing a
 ### **Real-World Applications**
 
 1. **Storage Estimation for Media-Heavy Applications:**
-   - **Scenario:** A video-sharing platform stores 1-minute videos uploaded by users. Each video averages 50 MB, and 1 million users upload videos monthly.
-   - **Calculation:**
-     - Monthly storage: 
-     
-     $$ 1 \, \text{million} \times 50 \, \text{MB} = 50 \, \text{TB/month} 
-     $$
+    - **Scenario:** A video-sharing platform stores 1-minute videos uploaded by users. Each video averages 50 MB, and 1 million users upload videos monthly.
+    - **Calculation:**
+        - Monthly storage: $ 1 \, \text{million} \times 50 \, \text{MB} = 50 \, \text{TB/month} $
 
-     - Yearly storage: 
-     
-     $$ 50 \, \text{TB/month} \times 12 \, \text{months} = 600 \, \text{TB/year} 
-     $$
+        - Yearly storage: $ 50 \, \text{TB/month} \times 12 \, \text{months} = 600 \, \text{TB/year} $
 
 2. **QPS Estimation for a Messaging App:**
    - **Scenario:** A messaging platform handles 100 million messages daily.
@@ -176,7 +170,7 @@ Phương pháp này không yêu cầu kết quả chính xác tuyệt đối, m�
        $$
        \text{Băng thông} = 10,000 \times 3 \, \text{Mbps} = 30 \, \text{Gbps}
        $$
-       
+
 
 ### **Thực hành tốt nhất trong thiết kế hệ thống**
 
