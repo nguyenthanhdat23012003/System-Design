@@ -44,6 +44,7 @@ $$
 4. **Peak QPS:**
 
    - Assuming peak QPS is **2 times** the average QPS:
+   
 $$
 \text{Peak QPS} = 2 \times 3500 = 7000 \, \text{QPS}.
 $$
