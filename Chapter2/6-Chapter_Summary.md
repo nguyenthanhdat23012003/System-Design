@@ -47,17 +47,9 @@ This approach is not about achieving exact results but rather about developing a
 2. **QPS Estimation for a Messaging App:**
    - **Scenario:** A messaging platform handles 100 million messages daily.
    - **Calculation:**
-     - Average QPS: 
-       
-       $$
-       QPS = \frac{100 \, \text{million messages}}{24 \, \text{hours} \times 3600 \, \text{seconds}} \approx 1157 \, \text{QPS}
-       $$
+     - Average QPS: $QPS = \frac{100 \, \text{million messages}}{24 \, \text{hours} \times 3600 \, \text{seconds}} \approx 1157 \, \text{QPS}$
 
-     - Peak QPS: Assuming peak traffic is 2x the average:
-       
-       $$
-       \text{Peak QPS} = 2 \times 1157 = 2314 \, \text{QPS}
-       $$
+     - Peak QPS: Assuming peak traffic is 2x the average: $\text{Peak QPS} = 2 \times 1157 = 2314 \, \text{QPS}$
 
 
 3. **Network Bandwidth Estimation:**
@@ -65,9 +57,9 @@ This approach is not about achieving exact results but rather about developing a
    - **Calculation:**
      - Total bandwidth required: 
 
-       $$
-       \text{Bandwidth} = 10,000 \times 3 \, \text{Mbps} = 30 \, \text{Gbps}
-       $$
+$$
+\text{Bandwidth} = 10,000 \times 3 \, \text{Mbps} = 30 \, \text{Gbps}
+$$
 
 ### **Best Practices for System Design**
 
@@ -134,32 +126,16 @@ Phương pháp này không yêu cầu kết quả chính xác tuyệt đối, m�
 1. **Ước tính lưu trữ cho ứng dụng chứa media:**
    - **Tình huống:** Một nền tảng chia sẻ video lưu trữ video dài 1 phút, mỗi video trung bình 50 MB, và có 1 triệu người dùng tải video lên mỗi tháng.
    - **Tính toán:**
-     - Dung lượng hàng tháng: 
+     - Dung lượng hàng tháng: $1 \, \text{triệu} \times 50 \, \text{MB} = 50 \, \text{TB/tháng} $
 
-     $$ 
-     1 \, \text{triệu} \times 50 \, \text{MB} = 50 \, \text{TB/tháng} 
-     $$
-
-     - Dung lượng hàng năm: 
-     
-     $$ 
-     50 \, \text{TB/tháng} \times 12 \, \text{tháng} = 600 \, \text{TB/năm} 
-     $$
+     - Dung lượng hàng năm: $50 \, \text{TB/tháng} \times 12 \, \text{tháng} = 600 \, \text{TB/năm}$
 
 2. **Ước tính QPS cho ứng dụng nhắn tin:**
    - **Tình huống:** Một nền tảng nhắn tin xử lý 100 triệu tin nhắn mỗi ngày.
    - **Tính toán:**
-     - QPS trung bình: 
+     - QPS trung bình: $QPS = \frac{100 \, \text{triệu tin nhắn}}{24 \, \text{giờ} \times 3600 \, \text{giây}} \approx 1157 \, \text{QPS}$
 
-       $$
-       QPS = \frac{100 \, \text{triệu tin nhắn}}{24 \, \text{giờ} \times 3600 \, \text{giây}} \approx 1157 \, \text{QPS}
-       $$
-
-     - QPS cao điểm: Giả định lưu lượng cao điểm gấp 2 lần trung bình:
-
-       $$
-       \text{QPS cao điểm} = 2 \times 1157 = 2314 \, \text{QPS}
-       $$
+     - QPS cao điểm: Giả định lưu lượng cao điểm gấp 2 lần trung bình: $\text{QPS cao điểm} = 2 \times 1157 = 2314 \, \text{QPS}$
 
 
 3. **Ước tính băng thông mạng:**
@@ -167,9 +143,9 @@ Phương pháp này không yêu cầu kết quả chính xác tuyệt đối, m�
    - **Tính toán:**
      - Tổng băng thông yêu cầu: 
 
-       $$
-       \text{Băng thông} = 10,000 \times 3 \, \text{Mbps} = 30 \, \text{Gbps}
-       $$
+$$
+\text{Băng thông} = 10,000 \times 3 \, \text{Mbps} = 30 \, \text{Gbps}
+$$
 
 
 ### **Thực hành tốt nhất trong thiết kế hệ thống**
