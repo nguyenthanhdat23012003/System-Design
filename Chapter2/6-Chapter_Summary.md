@@ -40,9 +40,9 @@ This approach is not about achieving exact results but rather about developing a
 1. **Storage Estimation for Media-Heavy Applications:**
     - **Scenario:** A video-sharing platform stores 1-minute videos uploaded by users. Each video averages 50 MB, and 1 million users upload videos monthly.
     - **Calculation:**
-        - Monthly storage: $ 1 \, \text{million} \times 50 \, \text{MB} = 50 \, \text{TB/month} $
+        - Monthly storage: $1 \, \text{million} \times 50 \, \text{MB} = 50 \, \text{TB/month}$
 
-        - Yearly storage: $ 50 \, \text{TB/month} \times 12 \, \text{months} = 600 \, \text{TB/year} $
+        - Yearly storage: $50 \, \text{TB/month} \times 12 \, \text{months} = 600 \, \text{TB/year}$
 
 2. **QPS Estimation for a Messaging App:**
    - **Scenario:** A messaging platform handles 100 million messages daily.
