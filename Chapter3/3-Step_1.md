@@ -39,6 +39,7 @@
 
 **Conclusion:** In real-world scenarios, system design is a process that combines understanding needs, asking the right questions to clarify ambiguities, and building structured solutions. Successfully managing uncertainty and maintaining flexibility are key to creating systems that are both effective and maintainable over time.
 
+---
 
 ## Bước 1: Hiểu vấn đề và xác định phạm vi thiết kế
 
